@@ -11,7 +11,7 @@ $(document).ready(function() {
 				for(var i=0; i < xData.d.results.length; i++){
 					//Leverage underscore to flatten an object to a string which gives you pencils,folders,envelopes
 					var allItems = _.flatten(xData.d.results[i].Items.results);
-					var lastUpdated =  moment(data.Last_x0020_Update).format('MM/DD/YY');
+					var lastUpdated =  moment(xData.d.results[i].Last_x0020_Update).format('MM/DD/YY');
 
 					html.push("<tr><td>"+xData.d.results[i].OrderNumber+"</td><td>"+xData.d.results[i].OrderAmount+"</td><td>"+xData.d.results[i].CSAgent.Title+"</td><td>"+xData.d.results[i].OrderStatus+"</td><td>"+lastUpdated+"</td><td>"+allItems+"</td></tr>");
 
